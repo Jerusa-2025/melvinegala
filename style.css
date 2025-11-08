@@ -5,7 +5,7 @@ body {
     scroll-behavior: smooth;
     font-size:18px;
 
-    background: url(image/images.jpeg) no-repeat center center fixed;
+    background: url(images.jpeg) no-repeat center center fixed;
     background-size: cover;
 
 
@@ -117,11 +117,11 @@ h2 {
 }
 
 .project2 {
-    background-image:url(design/544429274_4200967663481364_7501974338894233904_n.jpg);
+    background-image:url(544429274_4200967663481364_7501974338894233904_n.jpg);
 }
 
 .project3 {
-    background-image:url(design/530808701_4174527806125350_7849303256263376779_n.jpg);
+    background-image:url(530808701_4174527806125350_7849303256263376779_n.jpg);
 }
 
 /* Text overlay styling */
@@ -350,4 +350,5 @@ footer {
     footer {
         font-size: 0.9rem;
     }
+
 }
