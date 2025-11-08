@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-size:18px;
+
+    background: url(image/images.jpeg) no-repeat center center fixed;
+    background-size: cover;
+
+
+    position: relative;
+}
+
+header {
+    background-color: #3b4efc;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #080808;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    background: #3b4efc;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 150px;
+    text-align: center;
+}
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hover effect */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+}
+
+/* Individual project background images */
+.project1 {
+    background-image: url(image/web.PNG);
+}
+
+.project2 {
+    background-image:url(design/544429274_4200967663481364_7501974338894233904_n.jpg);
+}
+
+.project3 {
+    background-image:url(design/530808701_4174527806125350_7849303256263376779_n.jpg);
+}
+
+/* Text overlay styling */
+.project h3, .project p, .project a {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for text readability */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 5px;
+    background-color: rgba(59, 78, 252, 0.8);
+    color: white;
+    text-decoration: none;
+}
+
+.project a:hover {
+    background-color: rgba(42, 59, 188, 0.8);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #0077ff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #005ccc;
+}
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px;
+    background-color: #3b4efc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #3b4efc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color:#3b4efc;
+    color: white;
+}
+.project video {
+    width: 100%;
+    height: auto; /* Let it scale */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer; /* Indicate user can double-click fullscreen */
+}
+
+.project iframe {
+    border-radius: 8px;
+}
+
+.project {
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+}
+.video-project {
+    cursor: pointer; /* Show user they can click */
+}
+/* Lightbox overlay */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+#lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+* Tablets (portrait and smaller laptops) */
+@media (max-width: 992px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    .skills-grid, .projects-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project {
+        width: 45%;
+        height: auto;
+    }
+}
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav h1 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    /* Keep menu items in one line and scrollable if too many */
+    nav ul {
+        display: flex;
+        flex-direction: row;      /* stay in one row */
+        flex-wrap: nowrap;        /* prevent wrapping */
+        overflow-x: auto;         /* allow horizontal scroll if needed */
+        gap: 8px;
+        justify-content: center;
+        padding: 0;
+        scrollbar-width: none;    /* hide scrollbar on Firefox */
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;            /* hide scrollbar on Chrome */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        white-space: nowrap;      /* prevent line breaks */
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    section {
+        padding: 40px 10px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .skills-grid, .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill, .project {
+        width: 100%;
+        height: auto;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}

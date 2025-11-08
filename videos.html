@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Video Projects</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Lightbox fullscreen overlay */
+#video-lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+#video-lightbox iframe {
+    width: 90%;
+    height: 80%;
+}
+
+#video-lightbox #close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Melvin Egala</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="designs.html">Designs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="videos">
+    <div class="container">
+        <h2>Video Projects</h2>
+        <div class="projects-grid">
+            <div class="project video-project">
+                <iframe src="https://player.vimeo.com/video/1134848280" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="project video-project">
+                <iframe src="https://player.vimeo.com/video/1134848344" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="project video-project">
+                <iframe src="https://player.vimeo.com/video/1134848320" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="project video-project">
+                <iframe src="https://player.vimeo.com/video/1127058341" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fullscreen lightbox -->
+<div id="video-lightbox">
+    <span id="close-btn">&times;</span>
+    <iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<footer>
+    <p>&copy; 2025 Melvin Egala. All rights reserved.</p>
+</footer>
+
+<script>
+const lightbox = document.getElementById('video-lightbox');
+const lightboxIframe = lightbox.querySelector('iframe');
+const closeBtn = document.getElementById('close-btn');
+
+document.querySelectorAll('.video-project iframe').forEach(iframe => {
+    iframe.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxIframe.src = iframe.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxIframe.src = ''; // Stop video
+});
+
+// Close when clicking outside video
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxIframe.src = '';
+    }
+});
+</script>
+</body>
+</html>

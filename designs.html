@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <h1>Melvin Egala</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="designs.html">Designs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Designs Section -->
+    <section id="designs">
+        <div class="container">
+            <h2>Graphic Design Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img class="project-img" src="design/483522830_4023377064573759_6268323272039568238_n.jpg" alt="Design 1">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/484528290_4023926041185528_3928148634447053935_n.jpg" alt="Design 2">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/490302088_4053739078204224_325320229117843119_n.jpg" alt="Design 3">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/490809989_4055450641366401_4502367743118530646_n.jpg" alt="Design 4">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/530808701_4174527806125350_7849303256263376779_n.jpg" alt="Design 5">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/490716731_4053044478273684_8365119021024635591_n.jpg" alt="Design 6">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/8_n.jpg" alt="Design 7">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/7_n.jpg" alt="Design 8">
+                </div>
+                <div class="project">
+                    <img class="project-img" src="design/544429274_4200967663481364_7501974338894233904_n.jpg" alt="Design 9">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox-overlay">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full view">
+    </div>
+
+    <script>
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    const images = document.querySelectorAll('.project-img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;      // Show clicked image in overlay
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none'; // Close overlay
+    });
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay) {     // Close if clicking outside the image
+            lightboxOverlay.style.display = 'none';
+        }
+    });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Melvin Egala. All rights reserved.</p>
+    </footer>
+</body>
+</html>
